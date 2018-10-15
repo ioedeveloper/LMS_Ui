@@ -2023,6 +2023,7 @@
     <Content Include="Template\startui\demo\mouseup.jsp mouseleave.jsp" />
     <Content Include="Template\startui\demo\touchmove.jsp" />
     <Content Include="Views\LessonPlans\Index.cshtml" />
+    <Content Include="Views\LessonPlans\ListModulesAndTopics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,5 +13,15 @@ namespace LMS_Ui.Controllers
         {
             return View();
         }
+
+        public ActionResult ListModulesAndTopics()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateLessonPlan()
+        {
+            return View();
+        }
     }
 }

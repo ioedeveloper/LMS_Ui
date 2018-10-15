@@ -23,13 +23,17 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="css/lib/summernote/summernote.css">
-    <link rel="stylesheet" href="css/separate/pages/editor.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/separate/vendor/select2.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/separate/pages/files.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/lib/font-awesome/font-awesome.min.css">
+
+
+
+    <link rel="stylesheet" href="~/Content/UI/css/lib/bootstrap-sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="~/Content/UI/css/separate/vendor/sweet-alert-animations.min.css">
+
+
     <link rel="stylesheet" href="~/Content/UI/css/separate/vendor/bootstrap-touchspin.min.css">
-    <link rel="stylesheet" href="css/separate/pages/project.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/main.css">
@@ -69,9 +73,42 @@
     <script src="~/Content/UI/js/lib/tether/tether.min.js"></script>
     <script src="~/Content/UI/js/lib/bootstrap/bootstrap.min.js"></script>
     <script src="~/Content/UI/js/plugins.js"></script>
-   
+
     <script src="~/Content/UI/js/lib/select2/select2.full.min.js"></script>
     <script src="~/Content/UI/js/lib/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/Content/UI/js/lib/nestable/jquery.nestable.js"></script>
+    <script src="~/Content/UI/js/lib/bootstrap-sweetalert/sweetalert.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#nestable').nestable({
+                group: 1
+            });
+            $('#nestable2').nestable({
+                group: 1
+            });
+
+            $('#nestable3').nestable({
+                group: 2
+            });
+            $('#nestable4').nestable({
+                group: 2
+            });
+
+            $('#nestable5').nestable({
+                group: 2
+            });
+            $('#nestable6').nestable({
+                group: 2
+            });
+
+            $('#nestable7').nestable();
+
+            $('#nestable8').nestable();
+
+            $('#nestable9').nestable();
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

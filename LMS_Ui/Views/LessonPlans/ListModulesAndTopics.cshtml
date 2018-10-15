@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewBag.Title = "ListModulesAndTopics";
+}
+
+<h2>List Modules And Topics</h2>
+
+<div class="page-content">
+    <div class="container-fluid">
+        <section class="box-typical files-manager">
+            <nav class="files-manager-side">
+                <header class="files-manager-side-title">Subjects</header>
+                <ul class="files-manager-side-list">
+                    <li><a href="#" class="active">Maths</a></li>
+                </ul>
+            </nav><!--.files-manager-side-->
+
+            <div class="files-manager-panel">
+                <div class="files-manager-panel-in">
+                    <header class="files-manager-header">
+                        <div class="files-manager-header-left">
+                            <button class="btn btn-primary swal-btn-cancel"><i class="font-icon-left font-icon-plus-1"></i>Create Modules</button>
+
+                        </div>
+                        <div class="files-manager-header-right">
+
+                            <div class="search">
+                                <input type="text" class="form-control form-control-rounded" placeholder="Search" />
+                                <button type="submit" class="btn-icon"><i class="font-icon font-icon-search"></i></button>
+                            </div>
+                        </div>
+                    </header><!--.files-manager-header-->
+
+                    <div class="files-manager-content">
+                        <div class="files-manager-content-in scrollable-block">
+                            <div class="fm-file-grid">
+
+                                <section class="box-typical box-typical-padding">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="dd" id="nestable">
+                                                <ol class="dd-list">
+
+                                                    <li class="dd-item" data-id="2">
+                                                        <div class="dd-handle">Module Name</div>
+                                                        <ol class="dd-list">
+                                                            <li class="dd-item" data-id="3"><div class="dd-handle">Topic 1</div></li>
+                                                            <li class="dd-item" data-id="4"><div class="dd-handle">Topics 2</div></li>
+                                                            <li class="dd-item" data-id="5">
+                                                                <div class="dd-handle"> Topic 3</div>
+                                                                <ol class="dd-list">
+                                                                    <li class="dd-item" data-id="6"><div class="dd-handle">Sub Topic 1</div></li>
+                                                                    <li class="dd-item" data-id="7"><div class="dd-handle">Sub Topic 2</div></li>
+                                                                    <li class="dd-item" data-id="8"><div class="dd-handle">Sub Topic 3</div></li>
+                                                                </ol>
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+
+                                                </ol>
+                                            </div>
+                                        </div>
+
+
+                                    </div><!--.row-->
+
+                                </section><!--.box-typical-->
+                            </div>
+                        </div><!--.files-manager-content-in-->
+                    </div><!--.files-manager-content-->
+
+                    <section class="files-manager-aside">
+                        <div class="files-manager-aside-section">
+                            <div class="box-typical-header-sm">Lesson Plan Name</div>
+                            <div class="info-list">
+                                <p>Modules: 5</p>
+                                <p>Topics: 7</p>
+                            </div>
+                            <a href="#" class="btn btn-rounded"><i class="font-icon-left font-icon-download-3"></i>View Details</a>
+                        </div>
+
+                    </section><!--.files-manager-aside-->
+                </div><!--.files-manager-panel-in-->
+            </div><!--.files-manager-panels-->
+        </section><!--.files-manager-->
+    </div><!--.container-fluid-->
+</div><!--.page-content-->
+
+@section scripts
+    {
+
+    <script>
+        $(document).ready(function () {
+            $('.swal-btn-basic').click(function (e) {
+                e.preventDefault();
+                swal("Here's a message!");
+            });
+
+            $('.swal-btn-text').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Here's a message!",
+                    text: "It's pretty, isn't it?"
+                });
+            });
+
+            $('.swal-btn-success').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    type: "success",
+                    confirmButtonClass: "btn-success",
+                    confirmButtonText: "Success"
+                });
+            });
+
+            $('.swal-btn-warning').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "Your will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonClass: "btn-default",
+                    confirmButtonClass: "btn-warning",
+                    confirmButtonText: "Warning",
+                    closeOnConfirm: false
+                },
+                    function () {
+                        swal({
+                            title: "Deleted!",
+                            text: "Your imaginary file has been deleted.",
+                            type: "success",
+                            confirmButtonClass: "btn-success"
+                        });
+                    });
+            });
+
+            $('.swal-btn-cancel').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Create Module",
+                    text: "This will create a new module",
+                    //type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-success",
+                    confirmButtonText: "Create Module",
+                    cancelButtonText: "Cancel",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            swal({
+                                title: "Created",
+                                text: "Your Has Been Created.",
+                                type: "success",
+                                confirmButtonClass: "btn-success"
+                            });
+                        } else {
+                            swal({
+                                title: "Cancelled",
+                                text: "The Module Has Been Cancelled:)",
+                                type: "error",
+                                confirmButtonClass: "btn-danger"
+                            });
+                        }
+                    });
+            });
+
+            $('.swal-btn-custom-img').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Sweet!",
+                    text: "Here's a custom image.",
+                    confirmButtonClass: "btn-success",
+                    imageUrl: 'img/smile.png'
+                });
+            });
+
+            $('.swal-btn-info').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "Your will not be able to recover this imaginary file!",
+                    type: "info",
+                    showCancelButton: true,
+                    cancelButtonClass: "btn-default",
+                    confirmButtonText: "Info",
+                    confirmButtonClass: "btn-primary"
+                });
+            });
+
+            $('.swal-btn-input').click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "An input!",
+                    text: "Write something interesting:",
+                    type: "input",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    inputPlaceholder: "Write something"
+                }, function (inputValue) {
+                    if (inputValue === false) return false;
+                    if (inputValue === "") {
+                        swal.showInputError("You need to write something!");
+                        return false
+                    }
+                    swal("Nice!", "You wrote: " + inputValue, "success");
+                });
+            });
+        });
+    </script>
+}
