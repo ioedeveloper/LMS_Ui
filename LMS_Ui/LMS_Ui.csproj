@@ -2022,12 +2022,12 @@
     <Content Include="Template\startui\demo\keypress.jsp" />
     <Content Include="Template\startui\demo\mouseup.jsp mouseleave.jsp" />
     <Content Include="Template\startui\demo\touchmove.jsp" />
+    <Content Include="Views\LessonPlans\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Contents\" />
-    <Folder Include="Views\LessonPlans\" />
     <Folder Include="Views\Modules\" />
     <Folder Include="Views\Topics\" />
   </ItemGroup>
