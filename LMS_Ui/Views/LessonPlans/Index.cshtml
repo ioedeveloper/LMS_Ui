@@ -101,7 +101,10 @@
                 <div class="form-group">
                     <textarea class="form-control" placeholder="Lesson Plan Description"></textarea>
                 </div>
-                <a href="#" class="link">+ Add Module</a>
+                <a href="#" class="link add_module">+ Add Module</a>
+                <div class="module_container">
+                    <br />
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -116,7 +119,20 @@
 
     <script>
         $(document).ready(function () {
+            $('.add_module').click(function () {
+                let html = `<div><div class="form-group">
+                    <input class="form-control" placeholder="Enter Module Name"/>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Module Description"></textarea>
+                </div>
+                <a href="#" class="link remove_module" style="color:red">- Remove Module</a></div>`; 
+                $('.module_container').append(html);
+            });
 
+            $('.modal-body').on('click', '.remove_module', function () {
+                $(this).closest('div').remove();
+            });
 
             $('.swal-btn-cancel').click(function (e) {
                 e.preventDefault();
