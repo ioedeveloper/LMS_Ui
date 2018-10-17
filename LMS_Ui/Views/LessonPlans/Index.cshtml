@@ -18,8 +18,9 @@
                 <div class="files-manager-panel-in">
                     <header class="files-manager-header">
                         <div class="files-manager-header-left">
-                            <button class="btn btn-primary swal-btn-cancel"><i class="font-icon-left font-icon-plus-1"></i>Create Lesson Plan</button>
-
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Create Lesson Plan
+                            </button>
                         </div>
                         <div class="files-manager-header-right">
 
@@ -72,7 +73,7 @@
                                 <p>Modules: 5</p>
                                 <p>Topics: 7</p>
                             </div>
-                            <a href="@Url.Action("ListModulesAndTopics","LessonPlans")"  class="btn btn-rounded"><i class="font-icon-left font-icon-download-3"></i>View Details</a>
+                            <a href="@Url.Action("ListModulesAndTopics","LessonPlans")" class="btn btn-rounded"><i class="font-icon-left font-icon-download-3"></i>View Details</a>
                         </div>
 
                     </section><!--.files-manager-aside-->
@@ -81,13 +82,41 @@
         </section><!--.files-manager-->
     </div><!--.container-fluid-->
 </div><!--.page-content-->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Lesson Plan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Enter Lesson Plan Name"/>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Lesson Plan Description"></textarea>
+                </div>
+                <a href="#" class="link">+ Add Module</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section scripts
     {
 
     <script>
         $(document).ready(function () {
-   
+
 
             $('.swal-btn-cancel').click(function (e) {
                 e.preventDefault();
