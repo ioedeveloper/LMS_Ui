@@ -24,10 +24,13 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="~/Content/UI/css/separate/vendor/select2.min.css">
+    <link rel="stylesheet" href="~/Content/UI/css/separate/pages/project.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/separate/pages/files.min.css">
     <link rel="stylesheet" href="~/Content/UI/css/lib/font-awesome/font-awesome.min.css">
 
 
+    @* player *@
+    <link rel="stylesheet" href="~/Content/UI/css/separate/elements/player.min.css">
 
     <link rel="stylesheet" href="~/Content/UI/css/lib/bootstrap-sweetalert/sweetalert.css">
     <link rel="stylesheet" href="~/Content/UI/css/separate/vendor/sweet-alert-animations.min.css">
@@ -58,9 +61,10 @@
             </div>
         </div>
     </div>
+
+    @RenderBody()
+    <hr />
     <div class="container body-content">
-        @RenderBody()
-        <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>

@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "ViewContent";
+}
+
+
+<h2>View Content</h2>
+
+
+
+    <div class="page-content">
+        <div class="container-fluid">
+            <section class="box-typical files-manager">
+                <nav class="files-manager-side">
+                    <header class="files-manager-side-title">Subjects</header>
+                    <ul class="files-manager-side-list">
+                        <li><a href="@Url.Action("ViewLessonPlan","Student")" class="active">Maths</a></li>
+                    </ul>
+                </nav><!--.files-manager-side-->
+
+                <div class="files-manager-panel">
+                    <div class="files-manager-panel-in">
+                        <header class="files-manager-header">
+                            <div class="files-manager-header-left">
+                                <span> Lesson Plan Contents</span>
+
+                            </div>
+                            <div class="files-manager-header-right">
+
+                                <div class="search">
+                                    <input type="text" class="form-control form-control-rounded" placeholder="Search" />
+                                    <button type="submit" class="btn-icon"><i class="font-icon font-icon-search"></i></button>
+                                </div>
+                            </div>
+                        </header><!--.files-manager-header-->
+
+                        <div class="files-manager-content">
+                            <div class="row">
+                                <div class="col-xxl-9 col-lg-12 col-xl-8 col-md-8">
+                                    <section class="box-typical proj-page">
+                                        <section class="proj-page-attach-section scrollable-block">
+                                            <div class="proj-page-attach-section-in">
+                                                <header class="proj-page-subtitle">
+                                                    <h3>Topic Content</h3>
+                                                </header>
+                                                <div class="proj-page-attach-grid">
+                                                    <div class="gd-doc">
+                                                        <div class="gd-doc-preview">
+                                                            <a href="#">
+                                                                <img src="~/Content/UI/img/doc.jpg" alt="">
+                                                                <span class="icon"><i class="font-icon font-icon-downloaded"></i></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="gd-doc-title">Algebra</div>
+                                                        <div class="gd-doc-date">05/30/2014</div>
+                                                    </div>
+                                                    <div class="gd-doc">
+                                                        <div class="gd-doc-preview">
+                                                            <a href="#">
+                                                                <img src="~/Content/UI/img/doc.jpg" alt="">
+                                                                <span class="icon"><i class="font-icon font-icon-downloaded"></i></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="gd-doc-title">Arithemetics</div>
+                                                        <div class="gd-doc-date">05/30/2014</div>
+                                                    </div>
+                                                    <div class="gd-doc">
+                                                        <div class="gd-doc-preview">
+                                                            <a href="#">
+                                                                <img src="~/Content/UI/img/doc.jpg" alt="">
+                                                                <span class="icon"><i class="font-icon font-icon-downloaded"></i></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="gd-doc-title">Pamutation</div>
+                                                        <div class="gd-doc-date">05/30/2014</div>
+                                                    </div>
+                                                    <div class="gd-doc">
+                                                        <div class="gd-doc-preview">
+                                                            <a href="#">
+                                                                <img src="~/Content/UI/img/doc.jpg" alt="">
+                                                                <span class="icon"><i class="font-icon font-icon-downloaded"></i></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="gd-doc-title">Set theory</div>
+                                                        <div class="gd-doc-date">05/30/2014</div>
+                                                    </div>
+                                                    <div class="gd-doc">
+                                                        <div class="gd-doc-preview">
+                                                            <div class="cstm-player cstm-player-small">
+                                                                <div class="cstm-player-preview">
+                                                                    <img src="~/Content/UI/img/player-photo-s.jpg" alt="">
+                                                                </div>
+                                                                <div class="cstm-player-inner">
+                                                                    <div class="cstm-player-inner-in">
+                                                                        <div class="cstm-player-info">
+                                                                            <div class="cstm-player-info-in">
+                                                                                <div class="cstm-player-singer">Bernard Hermann</div>
+                                                                                <div class="cstm-player-song">La Mojarra</div>
+                                                                                <div class="cstm-player-album">La Mojarra – 2014</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="cstm-player-controls">
+                                                                            <i class="font-icon font-icon-play-prev"></i>
+                                                                            <i class="font-icon font-icon-play-circle"></i>
+                                                                            <i class="font-icon font-icon-play-next"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="cstm-player-progress">
+                                                                    <div style="width:26%"></div>
+                                                                </div>
+                                                            </div><!--.cstm-player-->
+                                                        </div>
+                                                        <div class="gd-doc-title">Graph</div>
+                                                        <div class="gd-doc-date">05/30/2014</div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </section><!--.proj-page-attach-section-->
+                                    </section>
+                                </div>
+                            </div>
+                        </div><!--.files-manager-content-->
+
+                        @*<section class="files-manager-aside">
+                            <div class="files-manager-aside-section">
+                                <div class="box-typical-header-sm">Lesson Plan Name</div>
+                                <div class="info-list">
+                                    <p>Modules: 5</p>
+                                    <p>Topics: 7</p>
+                                </div>
+                                <a href="@Url.Action("ListModulesAndTopics","LessonPlans")" class="btn btn-rounded"><i class="font-icon-left font-icon-download-3"></i>View Details</a>
+                            </div>
+
+                        </section>*@<!--.files-manager-aside-->
+                    </div><!--.files-manager-panel-in-->
+                </div><!--.files-manager-panels-->
+            </section><!--.files-manager-->
+        </div><!--.container-fluid-->
+    </div><!--.page-content-->
+
+
+

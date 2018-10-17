@@ -151,6 +151,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonPlansController.cs" />
     <Compile Include="Controllers\ModulesController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2024,6 +2025,8 @@
     <Content Include="Template\startui\demo\touchmove.jsp" />
     <Content Include="Views\LessonPlans\Index.cshtml" />
     <Content Include="Views\LessonPlans\ListModulesAndTopics.cshtml" />
+    <Content Include="Views\Student\ViewLessonPlan.cshtml" />
+    <Content Include="Views\Student\ViewContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

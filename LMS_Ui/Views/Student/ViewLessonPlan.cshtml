@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "ViewLessonPlan";
+}
+
+<h2>Folders of Lesson Plan</h2>
+
+
+<div class="page-content">
+    <div class="container-fluid">
+        <section class="box-typical files-manager">
+            <nav class="files-manager-side">
+                <header class="files-manager-side-title">Subjects</header>
+                <ul class="files-manager-side-list">
+                    <li><a href="@Url.Action("ViewLessonPlan","Student")" class="active">Maths</a></li>
+                </ul>
+            </nav><!--.files-manager-side-->
+
+            <div class="files-manager-panel">
+                <div class="files-manager-panel-in">
+                    <header class="files-manager-header">
+                        
+                        <div class="files-manager-header-right">
+
+                            <div class="search">
+                                <input type="text" class="form-control form-control-rounded" placeholder="Search" />
+                                <button type="submit" class="btn-icon"><i class="font-icon font-icon-search"></i></button>
+                            </div>
+                        </div>
+                    </header><!--.files-manager-header-->
+
+                    <div class="files-manager-content">
+                        <div class="files-manager-content-in scrollable-block">
+                            <div class="fm-file-grid">
+                                <a class="fm-file selected" href="@Url.Action("ViewContent","Student")">
+                                    <div class="fm-file-icon">
+                                        <img src="~/Content/UI/img/folder.png" alt="">
+                                    </div>
+                                    <div class="fm-file-name">App design assets</div>
+                                    <div class="fm-file-size">7 files, 358 MB</div>
+                                </a>
+                                <a class="fm-file">
+                                    <div class="fm-file-icon">
+                                        <img src="~/Content/UI/img/folder.png" alt="">
+                                    </div>
+                                    <div class="fm-file-name">Inspiration</div>
+                                    <div class="fm-file-size">144 files, 52 MB</div>
+                                </a>
+                                
+                            </div>
+                        </div><!--.files-manager-content-in-->
+                    </div><!--.files-manager-content-->
+
+                    <section class="files-manager-aside">
+                        <div class="files-manager-aside-section">
+                            <div class="box-typical-header-sm">Lesson Plan Name</div>
+                            <div class="info-list">
+                                <p>Modules: 5</p>
+                                <p>Topics: 7</p>
+                            </div>
+                          
+                        </div>
+
+                    </section><!--.files-manager-aside-->
+                </div><!--.files-manager-panel-in-->
+            </div><!--.files-manager-panels-->
+        </section><!--.files-manager-->
+    </div><!--.container-fluid-->
+</div><!--.page-content-->
