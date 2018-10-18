@@ -19,7 +19,14 @@ namespace LMS_Ui.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CreateLessonPlan()
+        public ActionResult CreateLessonPlan(string LessonPlanName, string LessonPlanDescription, string[] ModuleNames,string[] ModuleDescriptions)
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateModules(string ModuleName, string ModuleDescription,string[] topicNames, string[] topicDescriptions)
         {
             return View();
         }

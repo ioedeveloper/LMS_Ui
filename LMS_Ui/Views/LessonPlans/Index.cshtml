@@ -96,10 +96,10 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <input class="form-control" placeholder="Enter Lesson Plan Name"/>
+                    <input class="form-control" id="lessonPlanName" placeholder="Enter Lesson Plan Name"/>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" placeholder="Lesson Plan Description"></textarea>
+                    <textarea class="form-control" id="lessonPlanDescription" placeholder="Lesson Plan Description"></textarea>
                 </div>
                 <a href="#" class="link add_module">+ Add Module</a>
                 <div class="module_container">
@@ -108,8 +108,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Create</button>
-            </div>
+                <button type="button" class="btn btn-primary" id="createLessonPlan">Create</button>
+            </div>  
         </div>
     </div>
 </div>
@@ -118,53 +118,55 @@
     {
 
     <script>
+  
         $(document).ready(function () {
+         
             $('.add_module').click(function () {
                 let html = `<div><div class="form-group">
-                    <input class="form-control" placeholder="Enter Module Name"/>
+                    <input class="form-control moduleName" placeholder="Enter Module Name"/>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" placeholder="Module Description"></textarea>
+                    <textarea class="form-control moduleDescription" placeholder="Module Description"></textarea>
                 </div>
                 <a href="#" class="link remove_module" style="color:red">- Remove Module</a></div>`; 
                 $('.module_container').append(html);
+            });
+
+            $('#createLessonPlan').click(function () {
+                var lessonPlanName = $('#lessonPlanName').val();
+                var lessonPlanDescription = $('#lessonPlanDescription').val();
+                let moduleNameAndDescription = [];
+                moduleNameAndDescription["module_Name"] = [];
+                moduleNameAndDescription["module_Description"] = [];
+                $('.moduleName').each(function () {
+                    moduleNameAndDescription["module_Name"].push(this.value);
+                });
+                $('.moduleDescription').each(function () {
+                    moduleNameAndDescription["module_Description"].push(this.value);
+                });
+
+                $.ajax({
+                    method:"POST",
+                    url: "@Url.Action("CreateLessonPlan", "LessonPlans")",
+                    data: {
+                        LessonPlanName: lessonPlanName,
+                        LessonPlanDescription: lessonPlanDescription,
+                        ModuleNames: moduleNameAndDescription["module_Name"],
+                        ModuleDescriptions: moduleNameAndDescription["module_Description"]
+                    },
+              
+                });
+                console.log(moduleNameAndDescription);
+
+                alert(lessonPlanName + " " + lessonPlanDescription);
+
             });
 
             $('.modal-body').on('click', '.remove_module', function () {
                 $(this).closest('div').remove();
             });
 
-            $('.swal-btn-cancel').click(function (e) {
-                e.preventDefault();
-                swal({
-                    title: "Create Lesson Plan",
-                    //text: "This will create a new lesson Plan",
-                    //type: "warning",
-                    showCancelButton: true,
-                    confirmButtonClass: "btn-success",
-                    confirmButtonText: "Create",
-                    cancelButtonText: "Cancel",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                    function (isConfirm) {
-                        if (isConfirm) {
-                            swal({
-                                title: "Created",
-                                text: "Your Lesson Plan Has Been Created.",
-                                type: "success",
-                                confirmButtonClass: "btn-success"
-                            });
-                        } else {
-                            swal({
-                                title: "Cancelled",
-                                text: "The Lesson Plan Has Been Cancelled:)",
-                                type: "error",
-                                confirmButtonClass: "btn-danger"
-                            });
-                        }
-                    });
-            });
+           
 
         });
     </script>
